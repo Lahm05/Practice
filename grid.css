@@ -1,0 +1,174 @@
+/* CSS Variable */
+
+:root {
+    --primary: whitesmoke;
+    --dark: black;
+    --light: white;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+body{
+    background-color: lightgray;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+.btn{
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 10px;
+    text-decoration: none;
+    margin: 0;
+}
+
+img{
+    width: 100%;
+}
+
+.wrapper{
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* Navigation */
+
+.navbar ul{
+    list-style: none;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+}
+
+.navbar a{
+    text-decoration: none;
+    background-color: var(--primary);
+    display: block;
+    padding: 13px;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.navbar a:hover{
+    background-color: var(--dark);
+    color: var(--primary);
+}
+
+/* Top Container */
+.top-container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+
+.showcase{
+    grid-area: showcase;
+    background-image: url('../img/show.jpeg');
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.showcase h1{
+    color: var(--light);
+    font-size: 48px;
+    margin-bottom: 0;
+    line-height: 0.9em;
+}
+
+.showcase p{
+    color: var(--light);
+    font-size: 1.3rem;
+    margin-top: 0;
+}
+
+/* Top Box */
+.top-box{
+    background-color: var(--light);
+    padding: 20px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.top-box .price{
+    font-size: x-large;
+}
+.top-box-a{
+    grid-area: top-box-a;
+}
+
+.top-box-b{
+    grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.box{
+    background-color: var(--primary);
+    padding: 20px;
+}
+
+/* Info */
+.info{
+    background-color: var(--primary);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-footer{
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Medis Querry */
+@media (max-width:700px ) {
+    .top-container{
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+
+    .showcase h1{
+        font-size: 30px;
+    }
+
+    .navbar ul{
+        grid-template-columns: 1fr;
+    }
+
+    .info{
+        grid-template-columns: 1fr;
+    }
+
+    .info .btn{
+        display: block;
+        text-align: center;
+        margin-top: auto;
+    }
+}
